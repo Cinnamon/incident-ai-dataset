@@ -23,6 +23,9 @@ The NER dataset include six type of entities as following.
 | Process   | Handling of gas, and unit operations related to gas.<br>Abnormal processes are included in Incidents.                                                                                                                                                                                                                          | Filling<br>Distillation<br>Extraction<br>Reaction<br>Recovery<br>Mixing<br>Sealing<br>Nitrogen purge                                                                                                                              |
 | Tests     | Inspection devices and inspection actions outside the production process line.<br>Do not include inspection items such as XX concentration.                                                                                                                                                                                    | Inspection, visual inspection, three-month inspection<br>Detailed inspection, leakage inspection<br>Freon checker<br>Leak test<br>Analysis<br>Patrol                                                                              |
 
+### Data Format
+@Nathan: Please provide the explanation about the data format in the file uploaded in directory: `./NER/`
+
 ### Example Data
 #### Japanese (Original)
 ![ner_exmaple_jp](assets/ner_sample_jp.png)
@@ -44,6 +47,8 @@ The CE dataset define the span following five type of entities.
 | Damage_Human    | Incidents that resulted in or caused an accident, regardless of severity. Include only incidents that actually occurred, and do not include situations that did not lead to an incident.                                                                                                                                       | One employee injured left thigh and<br>left ear.                                                         |
 | Cause           | Tag sentences that confirm the event<br>causing Event_Leak and<br>Event_others. Target not only direct<br>causes but also indirect causes (e.g.,<br>Cause's Cause)。<br>In case of ignition or explosion, the<br>three elements of combustion<br>(combustibles, oxygen, and heat)<br>shall be noted cause.                     | As a result of reduced tightening<br>torque in some of the flange sections<br>cooled by hydrogen         |
 
+### Data Format
+@Hubert: Please provide the explanation about the data format in the file uploaded in directory: `./CE/`
 
 ### Example Data
 #### Japanese (Original)
