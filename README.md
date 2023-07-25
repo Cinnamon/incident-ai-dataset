@@ -48,7 +48,36 @@ The CE dataset define the span following five type of entities.
 | Cause           | Tag sentences that confirm the event<br>causing Event_Leak and<br>Event_others. Target not only direct<br>causes but also indirect causes (e.g.,<br>Cause's Cause)。<br>In case of ignition or explosion, the<br>three elements of combustion<br>(combustibles, oxygen, and heat)<br>shall be noted cause.                     | As a result of reduced tightening<br>torque in some of the flange sections<br>cooled by hydrogen         |
 
 ### Data Format
-@Hubert: Please provide the explanation about the data format in the file uploaded in directory: `./CE/`
+[//]: # (@Hubert: Please provide the explanation about the data format in the file uploaded in directory: `./CE/`)
+
+To make the Cause-Effect Extraction data more accessible, we prepare train/test splits in JSON format. Each item contains three fields:
+
+- "text": original text of the data item
+- "tags": list of tags for annotated spans
+- "spans": list of annotated spans
+
+From these fields, you can convert train/test data to standard NER (sequence labeling) or extractive QA format (SQuAD format).
+```
+{
+	"text": "2006-217 ポリブデン製造設備の水添反応器において、触媒再生作業中、内部を冷却するため水素ガスを送っていたところ爆発音がしたため、作業員が現場に急行したところ反応器の下部配管フランジ部より発火していた。 このため消火器で火を消し、その後公設消防が放水して当該部位付近を冷却した。この火災により、リアクター下部配管の保温材が焼損した。 原因は、本作業中に当該下部配管を取り替えたが、接続する際に本来は直径111ｍｍのパッキンを取付けるところ、誤って95mmのパッキンを取付けてしまったことである。 このため、水素が漏えいし静電気により着火し火災となったとみられる。今後は、作業マニュアルを見直し、作業員の教育を徹底することとした。",
+	"tags": [
+		"Event_others",
+		"Damage_Property",
+		"Cause",
+		"Event_Leak",
+		"Cause",
+		"Event_others"
+	],
+	"spans": [
+		"ポリブデン製造設備の水添反応器において、触媒再生作業中、内部を冷却するため水素ガスを送っていたところ爆発音がしたため、作業員が現場に急行したところ反応器の下部配管フランジ部より発火していた",
+		"この火災により、リアクター下部配管の保温材が焼損した",
+		"本作業中に当該下部配管を取り替えたが、接続する際に本来は直径111ｍｍのパッキンを取付けるところ、誤って95mmのパッキンを取付けてしまったことである",
+		"水素が漏えいし",
+		"静電気により",
+		"着火し火災となったとみられる"
+	]
+}
+```
 
 ### Example Data
 #### Japanese (Original)
