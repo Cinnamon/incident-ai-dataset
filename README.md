@@ -1,4 +1,5 @@
 # HPG IncidentAI Dataset
+Official code and data for our paper "**Towards Safer Operations: An Expert-involved Dataset of High-Pressure Gas Incidents for Preventing Future Failures**" - EMNLP 2023 (Industry Track)
 
 ## Overview
 
@@ -102,3 +103,16 @@ The IR dataset defines `Attributes` and their `Labels` for a given accident desc
 
 ### Example Data
 ![ir_exmaple](assets/ir_sample.png)
+
+## Citation
+If you find our work helpful, please cite us:
+```
+@misc{inoue2023safer,
+      title={Towards Safer Operations: An Expert-involved Dataset of High-Pressure Gas Incidents for Preventing Future Failures}, 
+      author={Shumpei Inoue and Minh-Tien Nguyen and Hiroki Mizokuchi and Tuan-Anh D. Nguyen and Huu-Hiep Nguyen and Dung Tien Le},
+      year={2023},
+      eprint={2310.12074},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
